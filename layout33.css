@@ -1,0 +1,156 @@
+/* CSS-Datei layout.css*/
+@charset "utf-8";
+@font-face {
+  font-family: "Truculenta";
+  src: url("../font/Truculenta-VariableFont_opsz,wdth,wght.ttf");
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(248, 244, 244);
+  font-family: "Truculenta", sans-serif;
+  font-size: 1.4vw;
+}
+nav {
+  grid-area: navi;
+  background-color: #4e2402;
+  text-align: right;
+  padding-right: 5vw;
+  padding-top: 10px;
+  box-sizing: border-box;
+
+}
+button {
+box-shadow: 0 0 5px black,
+0 0 25px black;
+color-scheme: rgb(15, 15, 15);
+background-color: rgb(11, 11, 11);
+color:aliceblue;
+}
+button:hover {
+    box-shadow: 0 0 5px black,
+    0 0 25px black, 0 0 50px black,
+    0 0 100px black, 0 0 200px black;
+}
+header {
+  grid-area: kopf;
+  padding-left: 5vw;
+  font-size: 5.0em;
+  background-image: url("../images/bear.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(243, 234, 234);
+}
+section {
+  background-color: rgb(5, 5, 5);
+}
+section#c1 {
+  grid-area: inhalt1;
+}
+section#c2 {
+  grid-area: inhalt2;
+}
+section#c3 {
+  grid-area: inhalt3;
+}
+section#c4 {
+  grid-area: inhalt4;
+}
+footer {
+  grid-area: fuss;
+  background-color: #630;
+  font-family: Arial, sans-serif;
+  font-size: 0.5em;
+  padding: 15px; 
+}
+a {
+  color: rgb(247, 243, 243);
+  text-decoration: none;
+}
+h2 {
+  color: rgb(99, 49, 2);
+  margin: 20px;
+  color: rgb(148, 77, 6)
+}
+p {
+  color: rgb(250, 246, 246);
+  margin: 20px;
+  font-size: 0.8em}
+
+@media screen and (min-width:1025px) and (orientation:landscape) {
+  article {
+    display: grid;
+    grid-template-rows: 0.5fr 2.5fr 3fr 0.2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1vh;
+    grid-row-gap: 1vh;
+    grid-template-areas: "navi navi navi navi"
+      "kopf kopf kopf kopf"
+      "inhalt1 inhalt2 inhalt3 inhalt4"
+      "fuss fuss fuss fuss";
+    height: auto;
+    max-width: 1200px;
+    margin: auto;
+  }
+  img.bild {
+    width: 25vw;
+    max-width: 300px;
+    height: auto
+  }
+  img.icon {
+    width: 80px;
+    height: auto
+  }
+}
+@media screen and (min-width:600px) and (max-width:1024px) {
+  article {
+    display: grid;
+    grid-template-rows: 0.3fr 2fr 3fr 3fr 0.2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1vh;
+    grid-row-gap: 1vh;
+    grid-template-areas: "navi navi"
+      "kopf kopf"
+      "inhalt1 inhalt2"
+      "inhalt3 inhalt4"
+      "fuss fuss";
+    height: auto;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+  img.bild {
+    width: 50vw;
+    height: auto
+  }
+  img.icon {
+    width: 60px;
+    height: auto
+  }
+}
+@media screen and (max-width:599px) and (orientation:portrait) {
+  article {
+    display: grid;
+    grid-template-rows: 1.5fr 3fr 3fr 3fr 3fr 0.2fr 100px;
+    grid-row-gap: 1vh;
+    grid-template-areas: "kopf""inhalt1""inhalt2""inhalt3"
+      "inhalt4""fuss""navi";
+    height: auto;
+  }
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+  }
+  img.bild {
+    width: 100vw;
+    height: auto
+  }
+  img.icon {
+    width: 80px;
+  }
+}
